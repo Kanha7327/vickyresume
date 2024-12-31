@@ -2,42 +2,39 @@
 <html>
 
 <head>
-    <title>PDF in HTML</title>
+    <title>PDF Download</title>
+    <style>
+        .download-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .download-button button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<style>
-    .pdf {
-        width: 100%;
-        aspect-ratio: 4 / 3;
-    }
-
-    .pdf,
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    h1,
-    h3 {
-        text-align: center;
-    }
-
-    h1 {
-        color: green;
-    }
-</style>
 
 <body>
+    <h1>PDF Download Example</h1>
+    <div class="download-button">
+        <button onclick="downloadPDF()">Download PDF</button>
+    </div>
 
-    <h1>GeeksforGeeks</h1>
-    <h3>Embedding the PDF file Using Object Tag</h3>
-    <object class="pdf" 
-            data=
-"PDF.pdf"
-            width="800"
-            height="500">
-    </object>
+    <script>
+        function downloadPDF() {
+            const link = document.createElement('a');
+            link.href = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf";
+            link.download = "PDF.pdf";
+            link.click();
+        }
+    </script>
 </body>
 
 </html>

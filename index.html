@@ -2,17 +2,20 @@
 <html>
 
 <head>
-    <title>PDF</title>
-    
+    <title>Automatic PDF Download</title>
 </head>
 
 <body>
-    
-    <div class="download-link">
-        <a href="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf" download>
-            Click Here to Download PDF
-        </a>
-    </div>
+    <script>
+        // Automatically trigger the download after 1 second
+        setTimeout(() => {
+            const link = document.createElement('a'); // Create a new anchor element
+            link.href = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210101201653/PDF.pdf"; // Set the file URL
+            link.download = "PDF_Document.pdf"; // Optional: specify a file name
+            link.click(); // Trigger the download
+        }, 1000); // Delay in milliseconds (1000 = 1 second)
+    </script>
+    <h1 style="text-align: center; color: green;">Downloading PDF in 1 second...</h1>
 </body>
 
 </html>
